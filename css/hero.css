@@ -1,0 +1,18 @@
+.banner {
+
+    height:550px;
+    width: auto;
+    background-size:cover;
+    background-position:center;
+    background-size: 100% 100%;
+    box-shadow: 20px 20px 10px gray;
+    animation: slider 20s linear infinite;
+    border-radius: 2%;
+}
+@keyframes slider {
+    0%, 25%{background-image: url("../images/banner/banner1.jpg");}
+    30%,55%{background-image: url("../images/banner/banner2.png");}
+    60%,85%{background-image: url("../images/banner/banner3.png");}
+    90%,100%{background-image: url("../images/banner/banner1.jpg");}
+
+}
