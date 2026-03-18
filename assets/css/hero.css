@@ -1,0 +1,21 @@
+.banner {
+  height: 550px;
+  width: auto;
+  background-size: cover;
+  background-position: center;
+  background-size: 100% 100%;
+  box-shadow: 20px 20px 10px gray;
+  animation: slider 20s linear infinite;
+  border-radius: 2%;
+}
+
+.swiper {
+  width: 100%;
+  height: 400px;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
