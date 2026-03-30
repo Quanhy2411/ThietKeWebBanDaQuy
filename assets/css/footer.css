@@ -63,3 +63,13 @@ ul {
   padding: 0;
   margin: 0;
 }
+/* Trạng thái bình thường */
+.footer-col a {
+  color: black;
+  transition: 0.4s; /* Thời gian chuyển đổi là 0.4 giây */
+}
+
+/* Trạng thái khi di chuyển chuột vào */
+.footer-col a:hover {
+  color: blue;
+}

@@ -1,0 +1,96 @@
+.knowledge-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.main-title {
+  font-size: 32px;
+  margin: 10px 0 30px;
+  font-weight: bold;
+}
+
+.grid-container {
+  display: grid;
+  /* Chia lưới thành 3 cột đều nhau */
+  grid-template-columns: repeat(3, 1fr);
+  /* Chia lưới thành 2 hàng */
+  grid-template-rows: repeat(2, 250px);
+  gap: 15px;
+}
+
+/* Định nghĩa vị trí cho thẻ lớn */
+.large-card {
+  grid-column: 1 / 3; /* Chiếm từ cột 1 đến cột 3 (tức là 2 cột đầu) */
+  grid-row: 1 / 3; /* Chiếm từ hàng 1 đến hàng 3 (tức là cả 2 hàng) */
+}
+
+/* Định dạng chung cho các item */
+.grid-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #000;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8; /* Làm tối ảnh để nổi bật chữ */
+  transition: transform 0.5s;
+}
+
+.grid-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Nội dung đè lên ảnh */
+.card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: #fff;
+}
+
+.category-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 3px 8px;
+  font-size: 10px;
+  margin-bottom: 8px;
+  border-radius: 2px;
+}
+
+.large-card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.small-card h4 {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Mobile Responsive */
+@media (max-width: 992px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Chuyển về 1 cột trên điện thoại */
+    grid-template-rows: auto;
+  }
+
+  .large-card {
+    grid-column: span 1;
+    grid-row: span 1;
+    height: 350px;
+  }
+
+  .small-card {
+    height: 250px;
+  }
+}
