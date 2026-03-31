@@ -72,6 +72,12 @@
   gap: 20px;
   max-width: 1000px;
   margin: auto;
+  text-align: center;
+}
+.sanPhamMoi {
+  margin: 60px auto;
+  max-width: 1100px;
+  text-align: center;
 }
 .itemTrangSuc {
   background: #fff;
@@ -104,6 +110,7 @@
   padding: 30px;
   border-radius: 12px;
   background: linear-gradient(135deg, #dbeafe, #93c5fd);
+  height: 400px;
 }
 .the {
   background: #fff;
@@ -137,9 +144,13 @@
   text-align: center;
 }
 .dsThuongHieu {
-  padding: 30px;
   border-radius: 12px;
-  background: linear-gradient(135deg, #dbeafe, #93c5fd);
+  background: linear-gradient(135deg, #ffffff, #ffffff);
+}
+.swiper-slide {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
 }
 .brand-card {
   position: relative;
@@ -148,7 +159,7 @@
 }
 .brand-card img {
   width: 100%;
-  height: 320px;
+  height: 320px px;
   object-fit: cover;
   border-radius: 15px;
 }
@@ -163,6 +174,7 @@
   font-weight: bold;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
+
 .news-section {
   max-width: 1200px;
   margin: 50px auto;
@@ -295,4 +307,50 @@
   .news-list {
     flex-direction: column;
   }
+}
+.bo-suu-tap-moi {
+  padding: 50px 0;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.section-title {
+  text-align: center;
+  font-size: x-large;
+  color: #d4af37; /* Màu vàng kim loại đồng bộ với web của bạn */
+  font-family: "Lucida Sans", sans-serif;
+  margin-bottom: 30px;
+}
+
+.collectionSlider {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.collectionSlider .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 400px; /* Độ rộng của mỗi banner bộ sưu tập */
+  height: 400px;
+  filter: blur(2px); /* Làm mờ nhẹ các slide bên cạnh */
+  transition: 0.5s;
+}
+
+/* Slide đang nằm ở giữa */
+.collectionSlider .swiper-slide-active {
+  filter: blur(0);
+  border: 2px solid #005595; /* Viền xanh giống mẫu bạn gửi */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.collectionSlider .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Tùy chỉnh màu các dấu chấm phân trang */
+.collectionSlider .swiper-pagination-bullet-active {
+  background: #005595;
 }

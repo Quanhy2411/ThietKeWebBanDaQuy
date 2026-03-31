@@ -61,3 +61,25 @@ var brandSwiper = new Swiper(".brandSlider", {
     },
   },
 });
+var collectionSwiper = new Swiper(".collectionSlider", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: "auto",
+  loop: true,
+  coverflowEffect: {
+    rotate: 0, // Không xoay để giữ hình phẳng sang trọng
+    stretch: 80, // Kéo các slide sát lại nhau hơn
+    depth: 200, // Tạo độ sâu (đẩy slide 2 bên lùi về sau)
+    modifier: 1,
+    slideShadows: true, // Tạo bóng đổ cho các slide bên cạnh
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
