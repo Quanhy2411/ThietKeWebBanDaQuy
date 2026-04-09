@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <button class="filter-btn" onclick="toggleDrawer()">
+      <i class="fas fa-filter"></i> BỘ LỌC
+    </button>
+
+    <div id="filterDrawer" class="drawer">
+      <div class="drawer-header">
+        <h3>Bộ lọc chi tiết</h3>
+        <button class="close-btn" onclick="toggleDrawer()">&times;</button>
+      </div>
+
+      <div class="drawer-content">
+        <h4>Chất liệu</h4>
+        <ul>
+          <li><input type="checkbox" /> Kim cương</li>
+          <li><input type="checkbox" /> Vàng 18K</li>
+        </ul>
+
+        <h4>Khoảng giá</h4>
+        <ul>
+          <li><input type="radio" name="price" /> Dưới 10 triệu</li>
+          <li><input type="radio" name="price" /> 10 - 50 triệu</li>
+        </ul>
+
+        <button class="apply-btn">ÁP DỤNG</button>
+      </div>
+    </div>
+
+    <div id="overlay" class="overlay" onclick="toggleDrawer()"></div>
+  </body>
+  <script>
+    function toggleDrawer() {
+      const drawer = document.getElementById("filterDrawer");
+      const overlay = document.getElementById("overlay");
+
+      drawer.classList.toggle("active");
+      overlay.classList.toggle("active");
+    }
+  </script>
+</html>
