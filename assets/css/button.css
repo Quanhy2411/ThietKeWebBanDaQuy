@@ -1,6 +1,6 @@
 /* Nút chung */
-.dsSpDaXem .swiper-button-next,
-.dsSpDaXem .swiper-button-prev {
+.swiper-button-next,
+.swiper-button-prev {
   width: 40px;
   height: 40px;
   background: white;
@@ -11,25 +11,24 @@
 }
 
 /* Ẩn icon mặc định */
-.dsSpDaXem .swiper-button-next::after,
-.dsSpDaXem .swiper-button-prev::after {
+.swiper-button-next::after,
+.swiper-button-prev::after {
   font-size: 16px;
   font-weight: bold;
 }
 
 /* Hover đẹp hơn */
-.dsSpDaXem .swiper-button-next:hover,
-.dsSpDaXem .swiper-button-prev:hover {
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
   background: #d4af37;
   color: white;
   transform: scale(1.1);
 }
 
 /* Căn vị trí */
-.dsSpDaXem .swiper-button-next {
+.swiper-button-next {
   right: 10px;
 }
-
-.dsSpDaXem .swiper-button-prev {
+.swiper-button-prev {
   left: 10px;
 }

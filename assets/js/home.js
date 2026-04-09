@@ -83,3 +83,15 @@ var collectionSwiper = new Swiper(".collectionSlider", {
     prevEl: ".swiper-button-prev",
   },
 });
+<script>
+var swiper = new Swiper(".mySlider", {
+  loop: true,
+
+  autoplay: {
+    delay: 3000, 
+    disableOnInteraction: false
+  },
+
+  speed: 1000
+});
+</script>

@@ -152,6 +152,11 @@
   display: flex;
   justify-content: center;
 }
+.swiper-slide td {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+}
 .brand-card {
   position: relative;
   border-radius: 15px;
@@ -312,14 +317,6 @@
   padding: 50px 0;
   background-color: #fff;
   overflow: hidden;
-}
-
-.section-title {
-  text-align: center;
-  font-size: x-large;
-  color: #d4af37; /* Màu vàng kim loại đồng bộ với web của bạn */
-  font-family: "Lucida Sans", sans-serif;
-  margin-bottom: 30px;
 }
 
 .collectionSlider {
