@@ -31,27 +31,28 @@
           <nav class="mn_bar">
             <div class="mn_bar1">
               <a href="index.html">Trang chủ</a>
-              <a href="page/tuyenDung.html">Tuyển dụng</a>
-              <a href="page/cuaHang.html">Cửa hàng</a>
+              <a href="tuyenDung.html">Tuyển dụng</a>
+              <a href="cuaHang.html">Cửa hàng</a>
             </div>
             <div class="logo">
               <a href="index.html">
                 <img src="images/logo.png" alt="TPL Jewelry" />
               </a>
             </div>
-            <div class="mn_bar1">
-              <a href="page/myAccount">Tài khoản của tôi</a>
-              <a href="page/gioHang">Giỏ hàng</a>
-              <div class="mn_bar1" id="authMenu">
-                <a href="page/login.html" id="loginLink">Đăng nhập</a>
+            <div class="mn_bar2">
+              <a href="myAccount.html">Tài khoản của tôi</a>
+              <a href="gioHang.html">Giỏ hàng</a>
+              <div id="Menu">
+                <a href="p/login.html" id="loginLink">Đăng nhập</a>
+                <span
+                  id="userInfo"
+                  style="display: none; color: #d4af37"
+                ></span>
                 <a href="page/logout.php" id="logoutLink" style="display: none"
                   >Đăng xuất</a
                 >
-
-                <a href="page/register.html">Đăng ký</a>
               </div>
             </div>
-            <div class="mn_bar2"></div>
           </nav>
         </div>
       </div>
@@ -597,5 +598,31 @@
     </div>
     <script type="text/javascript" src="assets/js/home.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Gọi đến file PHP để kiểm tra trạng thái
+        fetch("page/check_session.php")
+          .then((response) => response.json())
+          .then((data) => {
+            const loginLink = document.getElementById("loginLink");
+            const userInfo = document.getElementById("userInfo");
+            const logoutLink = document.getElementById("logoutLink");
+
+            if (data.isLoggedIn) {
+              // Nếu đã đăng nhập: Ẩn nút đăng nhập, hiện tên user và nút đăng xuất
+              loginLink.style.display = "none";
+              userInfo.textContent = "Chào, " + data.username;
+              userInfo.style.display = "inline";
+              logoutLink.style.display = "inline";
+            } else {
+              // Nếu chưa đăng nhập: Hiện nút đăng nhập, ẩn phần còn lại
+              loginLink.style.display = "inline";
+              userInfo.style.display = "none";
+              logoutLink.style.display = "none";
+            }
+          })
+          .catch((error) => console.error("Lỗi kiểm tra đăng nhập:", error));
+      });
+    </script>
   </body>
 </html>
