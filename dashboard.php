@@ -50,12 +50,12 @@ if (!isset($_SESSION['user_id'])) {
               <a href="myAccount.html">Tài khoản của tôi</a>
               <a href="gioHang.html">Giỏ hàng</a>
               <div id="Menu">
-                <a href="p/login.html" id="loginLink">Đăng nhập</a>
+                <a href="login.php" id="loginLink">Đăng nhập</a>
                 <span
                   id="userInfo"
                   style="display: none; color: #d4af37"
                 ></span>
-                <a href="page/logout.php" id="logoutLink" style="display: none"
+                <a href="logout.php" id="logoutLink" style="display: none"
                   >Đăng xuất</a
                 >
               </div>
@@ -550,7 +550,7 @@ if (!isset($_SESSION['user_id'])) {
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         // Gọi đến file PHP để kiểm tra trạng thái
-        fetch("page/check_session.php")
+        fetch("check_session.php")
           .then((response) => response.json())
           .then((data) => {
             const loginLink = document.getElementById("loginLink");
