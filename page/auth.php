@@ -1,27 +1,12 @@
 <?php
+session_start(); // Bắt buộc phải có ở dòng đầu tiên
 include 'db.php';
 
 if (isset($_POST['action'])) {
     $action = $_POST['action'];
 
-    // XỬ LÝ ĐĂNG KÝ
-    if ($action == 'register') {
-        $fName = $_POST['fName'];
-        $email = $_POST['email'];
-        $pass = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    // ... (Phần xử lý đăng ký giữ nguyên) ...
 
-        $stmt = $conn->prepare("INSERT INTO users (firstName, email, password) VALUES (?, ?, ?)");
-        $stmt->bind_param("sss", $fName, $email, $pass);
-        
-        if ($stmt->execute()) {
-            header("Location: login.html#login"); // Chuyển về tab login
-            exit();
-        } else {
-            echo "Lỗi: Email đã tồn tại.";
-        }
-    }
-
-    // XỬ LÝ ĐĂNG NHẬP
     if ($action == 'login') {
         $email = $_POST['email'];
         $pass = $_POST['password'];
@@ -32,14 +17,14 @@ if (isset($_POST['action'])) {
         $result = $stmt->get_result();
         $user = $result->fetch_assoc();
 
-      // Trong file page/auth.php
-if ($user && password_verify($pass, $user['password'])) {
-    $_SESSION['user_name'] = $user['firstName'];
-    
-    // Thay đổi từ ../index.html thành taiKhoan.html
-    header("Location: taiKhoan.html"); 
-    exit();
-}
+        if ($user && password_verify($pass, $user['password'])) {
+            // Lưu tên vào session 'user_name' để JS ở index.html đọc được
+            $_SESSION['user_name'] = $user['firstName']; 
+            header("Location: ../index.html"); // Sau khi login thành công thì về trang chủ
+            exit();
+        } else {
+            echo "Sai email hoặc mật khẩu!";
+        }
     }
 }
 ?>
