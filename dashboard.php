@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+// Kiểm tra xem session 'user_id' có tồn tại không. Nếu không, đá về trang login.
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit;
+}
+?>
 <!doctype html>
 <html>
   <head>
@@ -41,7 +50,7 @@
               <a href="myAccount.html">Tài khoản của tôi</a>
               <a href="gioHang.html">Giỏ hàng</a>
               <div id="Menu">
-                <a href="login.php" id="loginLink">Đăng nhập</a>
+                <a href="p/login.html" id="loginLink">Đăng nhập</a>
                 <span
                   id="userInfo"
                   style="display: none; color: #d4af37"

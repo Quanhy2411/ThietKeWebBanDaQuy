@@ -124,7 +124,6 @@ function updateHeaderAuth() {
     .catch((err) => console.log("Chưa đăng nhập"));
 }
 
-// Gọi hàm này khi trang web load
 document.addEventListener("DOMContentLoaded", function () {
   updateHeaderAuth();
 });
