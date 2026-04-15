@@ -1,0 +1,59 @@
+xxxxxxxxxxxxxxxx
+<div class="account-menu">
+  <span id="account-title" class="account-btn">Tài khoản</span>
+  <span
+    id="userInfo"
+    style="display: none; color: #d4af37; font-weight: bold"
+  ></span>
+
+  <div class="account-dropdown">
+    <a href="login.php" id="loginLink">Đăng nhập</a>
+    <a href="register.php" id="registerLink">Đăng ký</a>
+    <a href="logout.php" id="logoutLink" style="display: none">Đăng xuất</a>
+  </div>
+</div>
+<style>
+  /* Container cho menu tài khoản */
+  .account-menu {
+    position: relative;
+    display: inline-block;
+  }
+
+  .account-btn {
+    cursor: pointer;
+    padding: 5px 10px;
+  }
+
+  /* Danh sách dropdown ẩn mặc định */
+  .account-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  /* Kiểu dáng các đường link bên trong dropdown */
+  .account-dropdown a {
+    color: #333 !important;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  .account-dropdown a:hover {
+    background-color: #f9f9f9;
+    color: #d4af37 !important;
+  }
+
+  /* Hiển thị dropdown khi hover */
+  .account-menu:hover .account-dropdown {
+    display: block;
+  }
+</style>

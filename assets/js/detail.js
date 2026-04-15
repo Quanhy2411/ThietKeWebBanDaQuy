@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const productId = parseInt(params.get("id"));
 
   // Tìm sản phẩm trong data.js
-  const product = products.find((p) => p.id === productId);
+  const product = products.find((p) => p.id == productId);
 
   if (product) {
     renderProductDetail(product);
@@ -23,7 +23,7 @@ function renderProductDetail(product) {
 
       <div class="border rounded p-3 shadow-sm bg-white">
           <img 
-          src="../${product.image}" 
+          src="${product.image}" 
           class="img-fluid rounded"
           alt="${product.name}"
           style="max-height:450px">
@@ -118,11 +118,19 @@ function changeQty(value) {
 // ==============================
 
 function addToCart(productId) {
-  const qty = parseInt(document.getElementById("quantity").value);
+  // 1. Kiểm tra xem có ô nhập số lượng không (Trang chi tiết có, trang chủ không có)
+  const quantityInput = document.getElementById("quantity");
+  const qty = quantityInput ? parseInt(quantityInput.value) : 1;
 
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+  // 2. Tìm sản phẩm trong mảng 'products'
   const product = products.find((p) => p.id === productId);
+  if (!product) return;
+
+  // 3. Xử lý đường dẫn ảnh (Nếu ở trang chi tiết, ảnh có thể bị dư dấu ../)
+  // Ta chuẩn hóa để lưu vào giỏ hàng luôn là đường dẫn gốc từ thư mục shop
+  let cleanImage = product.image.replace("../", "");
 
   const existingItem = cart.find((item) => item.id === productId);
 
@@ -133,12 +141,26 @@ function addToCart(productId) {
       id: product.id,
       name: product.name,
       price: product.price,
-      image: product.image,
+      image: cleanImage, // Lưu đường dẫn sạch để trang nào cũng hiển thị được
       quantity: qty,
     });
   }
-
   localStorage.setItem("cart", JSON.stringify(cart));
 
-  alert("🛒 Đã thêm " + product.name + " vào giỏ hàng!");
+  // 3. Thay thế alert bằng TOAST đẹp mắt
+  Toastify({
+    text: `🛒 Đã thêm ${product.name} vào giỏ hàng!`,
+    duration: 3000, // Hiển thị trong 3 giây
+    close: true,
+    gravity: "top", // Hiển thị ở phía trên
+    position: "right", // Hiển thị ở bên phải
+    stopOnFocus: true, // Không tự mất khi đang di chuột vào
+    style: {
+      background: "linear-gradient(to right, #d4af37, #b8860b)", // Màu vàng kim sang trọng
+      color: "#fff",
+      borderRadius: "8px",
+      fontWeight: "bold",
+    },
+    onClick: function () {}, // Callback sau khi click vào toast
+  }).showToast();
 }

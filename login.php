@@ -49,6 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <title>Đăng Nhập</title>
     <style>
         body { font-family: sans-serif; display: flex; justify-content: center; margin-top: 50px; }
@@ -62,7 +63,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <div class="login-box">
     <h2>Đăng Nhập</h2>
-    
+    <p style="margin-top:15px; text-align:center;">
+    Chưa có tài khoản? <a href="register.php">Đăng ký ngay</a>
+</p>
     <?php if ($error_message): ?>
         <div class="error"><?php echo htmlspecialchars($error_message); ?></div>
     <?php endif; ?>

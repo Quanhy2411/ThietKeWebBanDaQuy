@@ -1,17 +1,28 @@
 .site-footer {
-  background: #f5f5f5;
+  background: #dcebf7;
   padding: 40px 60px;
   font-size: 14px;
 }
 
 .footer-container {
+  height: 400px;
   display: flex;
-  justify-content: space-between;
-  gap: 40px;
+  gap: 30px;
+  justify-content: center;
+  font-size: 15px;
+}
+.footer-infor {
+  display: flex;
+  gap: 30px;
+  margin: 0 50px;
+}
+
+.footer-col:first-child {
+  flex: 2;
 }
 
 .footer-col {
-  width: 25%;
+  flex: 1;
 }
 
 .footer-col h3 {

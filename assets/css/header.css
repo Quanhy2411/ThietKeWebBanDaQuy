@@ -7,7 +7,10 @@
   padding: 20px;
   position: sticky;
 }
-
+.logo img {
+  height: 100px;
+  width: auto;
+}
 .mn_bar {
   display: flex;
   justify-content: space-between;
@@ -19,19 +22,58 @@
   border-bottom: 10px;
 }
 
-.logo img {
-  height: 100px;
-  width: auto;
-}
-
 .mn_bar a {
   margin-right: 20px;
   text-decoration: none;
   color: black;
-  font-family: sans-serif;
+  font-family: "Times New Roman", Times, serif;
   border-bottom: 10px;
+  font-size: large;
 }
 .mn_bar1 a:hover {
   color: #b76e79; /* Đổi sang màu vàng kim loại khi di chuyển chuột vào */
   text-decoration: underline; /* Gạch chân để gây chú ý */
+}
+/* Container cho menu tài khoản */
+.account-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.account-btn {
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+/* Danh sách dropdown ẩn mặc định */
+.account-dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #fff;
+  min-width: 150px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Kiểu dáng các đường link bên trong dropdown */
+.account-dropdown a {
+  color: #333 !important;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.account-dropdown a:hover {
+  background-color: #f9f9f9;
+  color: #d4af37 !important;
+}
+
+/* Hiển thị dropdown khi hover */
+.account-menu:hover .account-dropdown {
+  display: block;
 }

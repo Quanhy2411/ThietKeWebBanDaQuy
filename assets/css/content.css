@@ -24,7 +24,7 @@
 
 /* ICON */
 .service-box .icon {
-  font-size: 28px;
+  font-size: 60px;
 }
 
 /* TEXT */
@@ -66,17 +66,19 @@
   font-weight: bold;
   text-decoration: none;
 }
-.dsTrangSuc {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 20px;
-  max-width: 1000px;
-  margin: auto;
-  text-align: center;
-}
+
 .sanPhamMoi {
   margin: 60px auto;
   max-width: 1100px;
+  height: auto;
+  text-align: center;
+}
+.dsTrangSuc {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20x;
+  max-width: 1500px;
+  margin: auto;
   text-align: center;
 }
 .itemTrangSuc {
@@ -89,12 +91,12 @@
 .itemTrangSuc img {
   width: 100%;
   border-radius: 12px;
-  height: 120px;
+  height: auto;
   object-fit: cover;
 }
 .itemTrangSuc p {
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 20px;
   color: #444;
 }
 .itemTrangSuc:hover {
@@ -103,14 +105,14 @@
 }
 .spDaXem {
   margin: 60px auto;
-  max-width: 1100px;
+  max-width: 1300px;
   text-align: center;
 }
 .dsSpDaXem {
   padding: 30px;
   border-radius: 12px;
   background: linear-gradient(135deg, #dbeafe, #93c5fd);
-  height: 400px;
+  height: 600px;
 }
 .the {
   background: #fff;
@@ -124,12 +126,12 @@
 }
 .the img {
   width: 100%;
-  height: 160px;
+  height: auto;
   object-fit: contain;
 }
 
 .tenTrangSuc {
-  font-size: 14px;
+  font-size: 20px;
   margin: 10px 0;
   color: #333;
 }
@@ -140,7 +142,7 @@
 .thuongHieu {
   display: flex;
   margin: 60px auto;
-  max-width: 1100px;
+  max-width: 1300px;
   text-align: center;
 }
 .dsThuongHieu {

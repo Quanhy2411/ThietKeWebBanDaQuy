@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
   <head>
+    <meta charset="UTF-8" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -38,20 +39,35 @@
               </a>
             </div>
             <div class="mn_bar2">
-              <a href="myAccount.html">Tài khoản của tôi</a>
               <a href="gioHang.html">Giỏ hàng</a>
-              <div id="Menu">
-                <a href="login.php" id="loginLink">Đăng nhập</a>
+              <div class="account-menu">
+                <span id="account-title" class="account-btn">Tài khoản</span>
                 <span
                   id="userInfo"
-                  style="display: none; color: #d4af37"
+                  style="display: none; color: #d4af37; font-weight: bold"
                 ></span>
-                <a href="logout.php" id="logoutLink" style="display: none"
-                  >Đăng xuất</a
-                >
+
+                <div class="account-dropdown">
+                  <a href="login.php" id="loginLink">Đăng nhập</a>
+                  <a href="register.php" id="registerLink">Đăng ký</a>
+                  <a href="logout.php" id="logoutLink" style="display: none"
+                    >Đăng xuất</a
+                  >
+                </div>
               </div>
             </div>
           </nav>
+          <form action="cuaHang.html" method="GET" class="search-form">
+            <div class="input-group">
+              <input
+                type="text"
+                name="search"
+                class="form-control"
+                placeholder="Tìm kiếm trang sức..."
+              />
+              <button type="submit" class="btn btn-warning">Tìm</button>
+            </div>
+          </form>
         </div>
       </div>
 
@@ -154,60 +170,125 @@
         </p>
       </section>
       <div class="dsTrangSuc">
-        <div class="itemTrangSuc">
-          <img src="images/DsTrangSuc/timGiHomNay/nhankimcuong.png" alt="" />
-          <p>Nhẫn kim cương</p>
-        </div>
-        <div class="itemTrangSuc">
-          <img src="images/DsTrangSuc/timGiHomNay/kim_cuong.png" alt="" />
-          <p>Nhẫn kim cương</p>
-        </div>
-        <div class="itemTrangSuc">
-          <img src="images/DsTrangSuc/timGiHomNay/bong_tai_ecz.png" alt="" />
-          <p>Bông tai</p>
-        </div>
-        <div class="itemTrangSuc">
-          <img
-            src="images/DsTrangSuc/timGiHomNay/dong_ho_kim_cuong.png"
-            alt=""
-          />
-          <p>Đồng hồ kim cương</p>
-        </div>
-        <div class="itemTrangSuc">
-          <img src="images/DsTrangSuc/timGiHomNay/nhan_cau_hon.png" alt="" />
-          <p>Nhẫn cầu hôn</p>
-        </div>
-        <div class="itemTrangSuc">
-          <img src="images/DsTrangSuc/timGiHomNay/nhan_cuoi.png" alt="" />
-          <p>Nhẫn cưới</p>
-        </div>
-        <div class="itemTrangSuc">
-          <img src="images/DsTrangSuc/timGiHomNay/trang_suc_bac.jpg" alt="" />
-          <p>Tr ang sức bạc</p>
-        </div>
-        <div class="itemTrangSuc">
-          <img
-            src="images/DsTrangSuc/timGiHomNay/trang_suc_may_man.jpg"
-            alt=""
-          />
-          <p>Trang sức may mắn</p>
-        </div>
-        <div class="itemTrangSuc">
-          <img src="images/DsTrangSuc/timGiHomNay/trang_suc_nam.jpg" alt="" />
-          <p>Trang sức nam</p>
-        </div>
-        <div class="itemTrangSuc">
-          <img src="images/DsTrangSuc/timGiHomNay/trang_suc_vang.jpg" alt="" />
-          <p>Trang sức vàng</p>
-        </div>
-        <div class="itemTrangSuc">
-          <img src="images/DsTrangSuc/timGiHomNay/day_chuyen_vang.png" alt="" />
-          <p>Dây chuyển vàng</p>
-        </div>
-        <div class="itemTrangSuc">
-          <img src="images/DsTrangSuc/timGiHomNay/trangsuccuoi.png" alt="" />
-          <p>Trang sức cưới</p>
-        </div>
+        <a
+          href="chitietsp.html?id=1"
+          class="text-decoration-none color-inherit"
+        >
+          <div class="itemTrangSuc">
+            <img src="images/DsTrangSuc/timGiHomNay/nhankimcuong.png" />
+            <p>Nhẫn kim cương</p>
+          </div>
+        </a>
+
+        <a
+          href="chitietsp.html?id=12"
+          class="text-decoration-none color-inherit"
+        >
+          <div class="itemTrangSuc">
+            <img src="images/DsTrangSuc/timGiHomNay/kim_cuong.png" />
+            <p>Nhẫn kim cương</p>
+          </div>
+        </a>
+
+        <a
+          href="chitietsp.html?id=4"
+          class="text-decoration-none color-inherit"
+        >
+          <div class="itemTrangSuc">
+            <img src="images/DsTrangSuc/timGiHomNay/bong_tai_ecz.png" />
+            <p>Bông tai</p>
+          </div>
+        </a>
+
+        <a
+          href="chitietsp.html?id=7"
+          class="text-decoration-none color-inherit"
+        >
+          <div class="itemTrangSuc">
+            <img src="images/DsTrangSuc/timGiHomNay/dong_ho_kim_cuong.png" />
+            <p>Đồng hồ kim cương</p>
+          </div>
+        </a>
+
+        <a
+          href="chitietsp.html?id=3"
+          class="text-decoration-none color-inherit"
+        >
+          <div class="itemTrangSuc">
+            <img src="images/DsTrangSuc/timGiHomNay/nhan_cau_hon.png" />
+            <p>Nhẫn cầu hôn</p>
+          </div>
+        </a>
+
+        <a
+          href="chitietsp.html?id=5"
+          class="text-decoration-none color-inherit"
+        >
+          <div class="itemTrangSuc">
+            <img src="images/DsTrangSuc/timGiHomNay/nhan_cuoi.png" />
+            <p>Nhẫn cưới</p>
+          </div>
+        </a>
+
+        <a
+          href="chitietsp.html?id=9"
+          class="text-decoration-none color-inherit"
+        >
+          <div class="itemTrangSuc">
+            <img src="images/DsTrangSuc/timGiHomNay/trang_suc_bac.jpg" />
+            <p>Trang sức bạc</p>
+          </div>
+        </a>
+
+        <a
+          href="chitietsp.html?id=10"
+          class="text-decoration-none color-inherit"
+        >
+          <div class="itemTrangSuc">
+            <img src="images/DsTrangSuc/timGiHomNay/trang_suc_may_man.jpg" />
+            <p>Trang sức may mắn</p>
+          </div>
+        </a>
+
+        <a
+          href="chitietsp.html?id=8"
+          class="text-decoration-none color-inherit"
+        >
+          <div class="itemTrangSuc">
+            <img src="images/DsTrangSuc/timGiHomNay/trang_suc_nam.jpg" />
+            <p>Trang sức nam</p>
+          </div>
+        </a>
+
+        <a
+          href="chitietsp.html?id=20"
+          class="text-decoration-none color-inherit"
+        >
+          <div class="itemTrangSuc">
+            <img src="images/DsTrangSuc/timGiHomNay/trang_suc_vang.jpg" />
+            <p>Trang sức vàng</p>
+          </div>
+        </a>
+
+        <a
+          href="chitietsp.html?id=6"
+          class="text-decoration-none color-inherit"
+        >
+          <div class="itemTrangSuc">
+            <img src="images/DsTrangSuc/timGiHomNay/day_chuyen_vang.png" />
+            <p>Dây chuyền vàng</p>
+          </div>
+        </a>
+
+        <a
+          href="chitietsp.html?id=11"
+          class="text-decoration-none color-inherit"
+        >
+          <div class="itemTrangSuc">
+            <img src="images/DsTrangSuc/timGiHomNay/trangsuccuoi.png" />
+            <p>Trang sức cưới</p>
+          </div>
+        </a>
       </div>
       <section>
         <p
@@ -230,51 +311,76 @@
         <div class="swiper dsSpDaXem">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <div class="the">
-                <img src="images/DsTrangSuc/spDaXem/sp1.png" alt="" />
-                <p class="tenTrangSuc">
-                  Bông tai vàng trắng 41,6% (10K) Đính đá critine Magnétique
-                </p>
-                <p class="giaTrangSuc">13.441.000đ</p>
-              </div>
+              <a
+                href="chitietsp.html?id=21"
+                class="text-decoration-none color-inherit"
+              >
+                <div class="the">
+                  <img src="images/DsTrangSuc/spDaXem/sp1.png" alt="" />
+                  <p class="tenTrangSuc">
+                    Bông tai vàng trắng 41,6% (10K) Đính đá critine Magnétique
+                  </p>
+                  <p class="giaTrangSuc">13.441.000đ</p>
+                </div>
+              </a>
+            </div>
+
+            <div class="swiper-slide">
+              <a
+                href="chitietsp.html?id=21"
+                class="text-decoration-none color-inherit"
+              >
+                <div class="the">
+                  <img src="images/DsTrangSuc/spDaXem/sp2.png" alt="" />
+                  <p class="tenTrangSuc">
+                    Bông tai Vàng 41,6% (10K) Đính đá Ruby PNJ Magnétique
+                    RBXMY000392
+                  </p>
+                  <p class="giaTrangSuc">13.441.000đ</p>
+                </div>
+              </a>
             </div>
             <div class="swiper-slide">
-              <div class="the">
-                <img src="images/DsTrangSuc/spDaXem/sp2.png" alt="" />
-                <p class="tenTrangSuc">
-                  Bông tai Vàng 41,6% (10K) Đính đá Ruby PNJ Magnétique
-                  RBXMY000392
-                </p>
-                <p class="giaTrangSuc">13.441.000đ</p>
-              </div>
+              <a
+                href="chitietsp.html?id=22"
+                class="text-decoration-none color-inherit"
+              >
+                <div class="the">
+                  <img src="images/DsTrangSuc/spDaXem/sp3.png" alt="" />
+                  <p class="tenTrangSuc">
+                    Dây cổ Vàng trắng 41,6% (10K) đính đá ECZ PNJ XMXMW000052
+                  </p>
+                  <p class="giaTrangSuc">13.441.000đ</p>
+                </div>
+              </a>
             </div>
             <div class="swiper-slide">
-              <div class="the">
-                <img src="images/DsTrangSuc/spDaXem/sp3.png" alt="" />
-                <p class="tenTrangSuc">
-                  Dây cổ Vàng trắng 41,6% (10K) đính đá ECZ PNJ XMXMW000052
-                </p>
-                <p class="giaTrangSuc">13.441.000đ</p>
-              </div>
+              <a
+                href="chitietsp.html?id=23"
+                class="text-decoration-none color-inherit"
+              >
+                <div class="the">
+                  <img src="images/DsTrangSuc/spDaXem/sp4.png" alt="" />
+                  <p class="tenTrangSuc">
+                    Hạt Charm Vàng trắng 41,6% (10K) Đính đá Sapphire Magnétique
+                  </p>
+                  <p class="giaTrangSuc">13.441.000đ</p>
+                </div>
+              </a>
             </div>
             <div class="swiper-slide">
-              <div class="the">
-                <img src="images/DsTrangSuc/spDaXem/sp4.png" alt="" />
-                <p class="tenTrangSuc">
-                  Hạt Charm Vàng trắng 41,6% (10K) Đính đá Sapphire Magnétique
-                  SPXMW000006
-                </p>
-                <p class="giaTrangSuc">13.441.000đ</p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="the">
-                <img src="images/DsTrangSuc/spDaXem/sp5.png" alt="" />
-                <p class="tenTrangSuc">
-                  Nhẫn Nam Vàng 41,6% (10K) Đính đá Ruby MANCODE RB00Y000242
-                </p>
-                <p class="giaTrangSuc">13.441.000đ</p>
-              </div>
+              <a
+                href="chitietsp.html?id=24"
+                class="text-decoration-none color-inherit"
+              >
+                <div class="the">
+                  <img src="images/DsTrangSuc/spDaXem/sp5.png" alt="" />
+                  <p class="tenTrangSuc">
+                    Nhẫn Nam Vàng 41,6% (10K) Đính đá Ruby MANCODE RB00Y000242
+                  </p>
+                  <p class="giaTrangSuc">13.441.000đ</p>
+                </div>
+              </a>
             </div>
           </div>
           <div class="swiper-button-next"></div>
@@ -481,62 +587,66 @@
         </div>
       </section>
       <div class="footer-container">
-        <div class="footer-col">
-          <img src="images/logo.png" style="width: 90px" alt="TPL_logo" />
+        <div class="footer-infor">
+          <div class="footer-col-">
+            <img src="images/logo.png" style="width: 90px" alt="TPL_logo" />
 
-          <p>© 2017 Công Ty Cổ Phần Vàng Bạc Đá Quý Tam Đa</p>
-          <p>Thôn Cành lá, xã cành cây, huyện Trên mây, tỉnh Dưới đất</p>
-          <p>ĐT: 0333 333 333 - Gmail:abcxyz@gmail.com</p>
-          <p>
-            Giấy chứng nhận đăng ký doanh nghiệp: 0333 333 333 do Sở Tài chính
-            ASDF cấp lần đầu ngày 02/01/2004
-          </p>
+            <p>© 2017 Công Ty Cổ Phần Vàng Bạc Đá Quý Tam Đa</p>
+            <p>Thôn Cành lá, xã cành cây, huyện Trên mây, tỉnh Dưới đất</p>
+            <p>ĐT: 0333 333 333 - Gmail:abcxyz@gmail.com</p>
+            <p>
+              Giấy chứng nhận đăng ký doanh nghiệp: 0333 333 333 do Sở Tài chính
+              ASDF cấp lần đầu ngày 02/01/2004
+            </p>
 
-          <p>Tổng đài hỗ trợ (08:00-21:00, miễn phí gọi)</p>
-          <p>Gọi mua: 0111 111 111 (phím 1)</p>
-          <p>Khiếu nại: 0111 111 111 (phím 2)</p>
-          <p>Email: cskh@tpl.com.vn</p>
-        </div>
-        <div class="footer-col">
-          <h3>Về TPL</h3>
-          <ul>
-            <li><a href="#">Quan hệ cổ đông (IR)</a></li>
-            <li><a href="#">Tuyển dụng</a></li>
-            <li><a href="#">Xuất khẩu</a></li>
-            <li><a href="#">Kinh doanh sỉ</a></li>
-            <li><a href="#">Kiểm định kim cương</a></li>
-            <li><a href="#">Quà tặng doanh nghiệp</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h3>KẾT NỐI VỚI CHÚNG TÔI</h3>
-          <li>
-            <ul class="li_mxh">
-              <a href="https://facebook.com" target="_blank">Facebook</a>
-              <img src="images/logoMXH/facebook.svg" height="20px" alt="" />
+            <p>Tổng đài hỗ trợ (08:00-21:00, miễn phí gọi)</p>
+            <p>Gọi mua: 0111 111 111 (phím 1)</p>
+            <p>Khiếu nại: 0111 111 111 (phím 2)</p>
+            <p>Email: cskh@tpl.com.vn</p>
+          </div>
+          <div class="footer-col">
+            <h3>Về TPL</h3>
+            <ul>
+              <li><a href="#">Quan hệ cổ đông (IR)</a></li>
+              <li><a href="#">Tuyển dụng</a></li>
+              <li><a href="#">Xuất khẩu</a></li>
+              <li><a href="#">Kinh doanh sỉ</a></li>
+              <li><a href="#">Kiểm định kim cương</a></li>
+              <li><a href="#">Quà tặng doanh nghiệp</a></li>
             </ul>
-            <ul class="li_mxh">
-              <a href="https://instagram.com" target="_blank">Instagram</a>
-              <img src="images/logoMXH/instagram.svg" height="20px" alt="" />
-            </ul>
-            <ul class="li_mxh">
-              <a href="https://youtube.com" target="_blank">Youtube</a>
-              <img src="images/logoMXH/youtube.svg" height="20px" alt="" />
-            </ul>
-            <ul class="li_mxh">
-              <a href="https://gmail.com" target="_blank">Email</a>
-            </ul>
-          </li>
-        </div>
-        <div class="footer-col">
-          <h3>Quan tâm TPL qua Zalo</h3>
-          <a href="https://id.zalo.me" target="_blank">
-            <img src="images/logoMXH/zalo.png" alt="Liên hệ qua Zalo" />
-          </a>
+          </div>
+          <div class="footer-col">
+            <h3>KẾT NỐI VỚI CHÚNG TÔI</h3>
+            <li>
+              <ul class="li_mxh">
+                <a href="https://facebook.com" target="_blank">Facebook</a>
+                <img src="images/logoMXH/facebook.svg" height="20px" alt="" />
+              </ul>
+              <ul class="li_mxh">
+                <a href="https://instagram.com" target="_blank">Instagram</a>
+                <img src="images/logoMXH/instagram.svg" height="20px" alt="" />
+              </ul>
+              <ul class="li_mxh">
+                <a href="https://youtube.com" target="_blank">Youtube</a>
+                <img src="images/logoMXH/youtube.svg" height="20px" alt="" />
+              </ul>
+              <ul class="li_mxh">
+                <a href="https://gmail.com" target="_blank">Email</a>
+              </ul>
+            </li>
+          </div>
+          <div class="footer-col">
+            <h3>Quan tâm TPL qua Zalo</h3>
+            <a href="https://id.zalo.me" target="_blank">
+              <img src="images/logoMXH/zalo.png" alt="Liên hệ qua Zalo" />
+            </a>
+          </div>
         </div>
       </div>
     </div>
     <script type="text/javascript" src="assets/js/home.js"></script>
+    <script src="data.js"></script>
+    <script src="detail.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -557,6 +667,37 @@
             } else {
               // Nếu chưa đăng nhập: Hiện nút đăng nhập, ẩn phần còn lại
               loginLink.style.display = "inline";
+              userInfo.style.display = "none";
+              logoutLink.style.display = "none";
+            }
+          })
+          .catch((error) => console.error("Lỗi kiểm tra đăng nhập:", error));
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Gọi đến file PHP để kiểm tra trạng thái session
+        fetch("check_session.php")
+          .then((response) => response.json())
+          .then((data) => {
+            const loginLink = document.getElementById("loginLink");
+            const registerLink = document.getElementById("registerLink"); // Nút đăng ký mới thêm
+            const userInfo = document.getElementById("userInfo");
+            const logoutLink = document.getElementById("logoutLink");
+
+            if (data.isLoggedIn) {
+              // Nếu đã đăng nhập: Ẩn Đăng nhập/Đăng ký, hiện tên và Đăng xuất
+              if (loginLink) loginLink.style.display = "none";
+              if (registerLink) registerLink.style.display = "none";
+
+              userInfo.textContent = "Chào, " + data.username;
+              userInfo.style.display = "inline";
+              logoutLink.style.display = "inline";
+            } else {
+              // Nếu chưa đăng nhập: Hiện Đăng nhập/Đăng ký, ẩn phần còn lại
+              if (loginLink) loginLink.style.display = "inline";
+              if (registerLink) registerLink.style.display = "inline";
+
               userInfo.style.display = "none";
               logoutLink.style.display = "none";
             }

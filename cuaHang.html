@@ -34,22 +34,49 @@
     </div>
     <div class="container">
       <nav class="mn_bar">
-        <div class="mn_bar1">
-          <a href="index.html">Trang chủ</a>
-          <a href="tuyenDung.html">Tuyển dụng</a>
-          <a href="cuaHang.html">Cửa hàng</a>
-        </div>
-        <div class="logo">
-          <a href="index.html">
-            <img src="images/logo.png" alt="TPL Jewelry" />
-          </a>
-        </div>
-        <div class="mn_bar2">
-          <a href="page/myAccount">Tài khoản của tôi</a>
-          <a href="gioHang">Giỏ hàng</a>
-          <a href="login_logout">Đăng nhập / Đăng xuất</a>
-        </div>
+            <div class="mn_bar1">
+              <a href="index.html">Trang chủ</a>
+              <a href="tuyenDung.html">Tuyển dụng</a>
+              <a href="cuaHang.html">Cửa hàng</a>
+            </div>
+            <div class="logo">
+              <a href="index.html">
+                <img src="images/logo.png" alt="TPL Jewelry" />
+              </a>
+            </div>
+            <div class="mn_bar2">
+              <a href="gioHang.html">Giỏ hàng</a>
+              <div class="account-menu">
+                <span id="account-title" class="account-btn">Tài khoản</span>
+                <span
+                  id="userInfo"
+                  style="display: none; color: #d4af37; font-weight: bold"
+                ></span>
+
+                <div class="account-dropdown">
+                  <a href="login.php" id="loginLink">Đăng nhập</a>
+                  <a href="register.php" id="registerLink">Đăng ký</a>
+                  <a href="logout.php" id="logoutLink" style="display: none"
+                    >Đăng xuất</a
+                  >
+                </div>
+              </div>
+            </div>
+          </nav>>
       </nav>
+      <div class="container mt-5">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="cuaHang.html">Cửa hàng</a></li>
+            <li class="breadcrumb-item active" id="breadcrumb-name">
+              Sản phẩm
+            </li>
+          </ol>
+        </nav>
+
+        <div class="row mt-4" id="product-detail"></div>
+      </div>
     </div>
 
     <div class="container mt-5">

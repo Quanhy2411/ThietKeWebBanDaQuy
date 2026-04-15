@@ -37,17 +37,71 @@ function renderProducts(data) {
 
 // Lọc sản phẩm
 function filterProducts() {
-  const category = document.getElementById("filterCategory").value;
+  const categoryElement = document.getElementById("filterCategory");
+  const searchInput = document.getElementById("searchInput");
 
-  if (category === "all") {
-    renderProducts(products);
-  } else {
-    const filtered = products.filter((p) => p.category === category);
-    renderProducts(filtered);
-  }
+  const category = categoryElement ? categoryElement.value : "all";
+  const keyword = searchInput ? removeVietnamese(searchInput.value) : "";
+
+  const filtered = products.filter((p) => {
+    const name = removeVietnamese(p.name);
+
+    const matchesCategory = category === "all" || p.category === category;
+    const matchesKeyword =
+      name.includes(keyword) || p.price.toString().includes(keyword);
+
+    return matchesCategory && matchesKeyword;
+  });
+
+  renderProducts(filtered);
 }
 
 // Load trang
 document.addEventListener("DOMContentLoaded", () => {
-  renderProducts(products);
+  const params = new URLSearchParams(window.location.search);
+  const searchKeyword = params.get("search");
+
+  if (searchKeyword) {
+    const searchInput = document.getElementById("searchInput");
+    if (searchInput) searchInput.value = searchKeyword;
+
+    const filtered = products.filter((product) =>
+      product.name.toLowerCase().includes(searchKeyword.toLowerCase()),
+    );
+    renderProducts(filtered);
+  } else {
+    renderProducts(products);
+  }
 });
+function addToCart(productId) {
+  // 1. Kiểm tra xem có ô nhập số lượng không (Trang chi tiết có, trang chủ không có)
+  const quantityInput = document.getElementById("quantity");
+  const qty = quantityInput ? parseInt(quantityInput.value) : 1;
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  // 2. Tìm sản phẩm trong mảng 'products'
+  const product = products.find((p) => p.id === productId);
+  if (!product) return;
+
+  // 3. Xử lý đường dẫn ảnh (Nếu ở trang chi tiết, ảnh có thể bị dư dấu ../)
+  // Ta chuẩn hóa để lưu vào giỏ hàng luôn là đường dẫn gốc từ thư mục shop
+  let cleanImage = product.image.replace("../", "");
+
+  const existingItem = cart.find((item) => item.id === productId);
+
+  if (existingItem) {
+    existingItem.quantity += qty;
+  } else {
+    cart.push({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: cleanImage, // Lưu đường dẫn sạch để trang nào cũng hiển thị được
+      quantity: qty,
+    });
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert("🛒 Đã thêm " + product.name + " vào giỏ hàng!");
+}

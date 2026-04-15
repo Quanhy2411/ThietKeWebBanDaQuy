@@ -10,6 +10,7 @@ if (!isset($_SESSION['user_id'])) {
 <!doctype html>
 <html>
   <head>
+    <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -47,20 +48,36 @@ if (!isset($_SESSION['user_id'])) {
               </a>
             </div>
             <div class="mn_bar2">
-              <a href="myAccount.html">Tài khoản của tôi</a>
+
               <a href="gioHang.html">Giỏ hàng</a>
-              <div id="Menu">
-                <a href="login.php" id="loginLink">Đăng nhập</a>
+              <div class="account-menu">
+                <span id="account-title" class="account-btn">Tài khoản</span>
                 <span
                   id="userInfo"
-                  style="display: none; color: #d4af37"
+                  style="display: none; color: #d4af37; font-weight: bold"
                 ></span>
-                <a href="logout.php" id="logoutLink" style="display: none"
-                  >Đăng xuất</a
-                >
+
+                <div class="account-dropdown">
+                  <a href="login.php" id="loginLink">Đăng nhập</a>
+                  <a href="register.php" id="registerLink">Đăng ký</a>
+                  <a href="logout.php" id="logoutLink" style="display: none"
+                    >Đăng xuất</a
+                  >
+                </div>
               </div>
             </div>
           </nav>
+          <form action="cuaHang.html" method="GET" class="search-form">
+            <div class="input-group">
+              <input
+                type="text"
+                name="search"
+                class="form-control"
+                placeholder="Tìm kiếm trang sức..."
+              />
+              <button type="submit" class="btn btn-warning">Tìm</button>
+            </div>
+          </form>
         </div>
       </div>
 

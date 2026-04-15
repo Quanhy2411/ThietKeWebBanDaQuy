@@ -45,9 +45,22 @@
           </a>
         </div>
         <div class="mn_bar2">
-          <a href="page/myAccount">Tài khoản của tôi</a>
-          <a href="gioHang">Giỏ hàng</a>
-          <a href="login_logout">Đăng nhập / Đăng xuất</a>
+          <a href="gioHang.html">Giỏ hàng</a>
+          <div class="account-menu">
+            <span id="account-title" class="account-btn">Tài khoản</span>
+            <span
+              id="userInfo"
+              style="display: none; color: #d4af37; font-weight: bold"
+            ></span>
+
+            <div class="account-dropdown">
+              <a href="login.php" id="loginLink">Đăng nhập</a>
+              <a href="register.php" id="registerLink">Đăng ký</a>
+              <a href="logout.php" id="logoutLink" style="display: none"
+                >Đăng xuất</a
+              >
+            </div>
+          </div>
         </div>
       </nav>
     </div>
