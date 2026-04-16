@@ -68,11 +68,11 @@ var collectionSwiper = new Swiper(".collectionSlider", {
   slidesPerView: "auto",
   loop: true,
   coverflowEffect: {
-    rotate: 0, // Không xoay để giữ hình phẳng sang trọng
-    stretch: 80, // Kéo các slide sát lại nhau hơn
-    depth: 200, // Tạo độ sâu (đẩy slide 2 bên lùi về sau)
+    rotate: 0,
+    stretch: 80,
+    depth: 200,
     modifier: 1,
-    slideShadows: true, // Tạo bóng đổ cho các slide bên cạnh
+    slideShadows: true,
   },
   pagination: {
     el: ".swiper-pagination",
@@ -113,7 +113,7 @@ function updateHeaderAuth() {
       if (data.loggedIn) {
         if (loginLink) {
           loginLink.innerHTML = `<i class="fa-solid fa-user"></i> Xin chào, ${data.name}`;
-          loginLink.href = "#"; // Không cho bấm sang trang login nữa
+          loginLink.href = "#";
         }
         if (logoutLink) {
           logoutLink.style.display = "inline-block";

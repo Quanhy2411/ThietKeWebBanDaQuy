@@ -42,15 +42,13 @@ function renderCart() {
   totalPriceElement.innerText = total.toLocaleString("vi-VN") + "đ";
 }
 
-// Cập nhật số lượng và tự động tăng giá tiền
 function updateQuantity(index, newQty) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   cart[index].quantity = parseInt(newQty);
   localStorage.setItem("cart", JSON.stringify(cart));
-  renderCart(); // Gọi lại hàm để cập nhật lại giao diện và tổng tiền
+  renderCart();
 }
 
-// Xóa sản phẩm khỏi giỏ
 function removeItem(index) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   cart.splice(index, 1);
@@ -58,5 +56,4 @@ function removeItem(index) {
   renderCart();
 }
 
-// Chạy lần đầu khi vào trang
 document.addEventListener("DOMContentLoaded", renderCart);

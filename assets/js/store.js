@@ -35,7 +35,6 @@ function renderProducts(data) {
   });
 }
 
-// Lọc sản phẩm
 function filterProducts() {
   const categoryElement = document.getElementById("filterCategory");
   const searchInput = document.getElementById("searchInput");
@@ -56,7 +55,6 @@ function filterProducts() {
   renderProducts(filtered);
 }
 
-// Load trang
 document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const searchKeyword = params.get("search");
@@ -74,18 +72,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 function addToCart(productId) {
-  // 1. Kiểm tra xem có ô nhập số lượng không (Trang chi tiết có, trang chủ không có)
   const quantityInput = document.getElementById("quantity");
   const qty = quantityInput ? parseInt(quantityInput.value) : 1;
 
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  // 2. Tìm sản phẩm trong mảng 'products'
   const product = products.find((p) => p.id === productId);
   if (!product) return;
 
-  // 3. Xử lý đường dẫn ảnh (Nếu ở trang chi tiết, ảnh có thể bị dư dấu ../)
-  // Ta chuẩn hóa để lưu vào giỏ hàng luôn là đường dẫn gốc từ thư mục shop
   let cleanImage = product.image.replace("../", "");
 
   const existingItem = cart.find((item) => item.id === productId);
@@ -97,7 +91,7 @@ function addToCart(productId) {
       id: product.id,
       name: product.name,
       price: product.price,
-      image: cleanImage, // Lưu đường dẫn sạch để trang nào cũng hiển thị được
+      image: cleanImage,
       quantity: qty,
     });
   }

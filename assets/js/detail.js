@@ -97,10 +97,6 @@ function renderProductDetail(product) {
   document.getElementById("product-detail").innerHTML = detailHTML;
 }
 
-// ==============================
-// Tăng giảm số lượng
-// ==============================
-
 function changeQty(value) {
   const input = document.getElementById("quantity");
 
@@ -113,12 +109,7 @@ function changeQty(value) {
   input.value = qty;
 }
 
-// ==============================
-// Thêm vào giỏ hàng
-// ==============================
-
 function addToCart(productId) {
-  // 1. Kiểm tra xem có ô nhập số lượng không (Trang chi tiết có, trang chủ không có)
   const quantityInput = document.getElementById("quantity");
   const qty = quantityInput ? parseInt(quantityInput.value) : 1;
 
@@ -127,9 +118,6 @@ function addToCart(productId) {
   // 2. Tìm sản phẩm trong mảng 'products'
   const product = products.find((p) => p.id === productId);
   if (!product) return;
-
-  // 3. Xử lý đường dẫn ảnh (Nếu ở trang chi tiết, ảnh có thể bị dư dấu ../)
-  // Ta chuẩn hóa để lưu vào giỏ hàng luôn là đường dẫn gốc từ thư mục shop
   let cleanImage = product.image.replace("../", "");
 
   const existingItem = cart.find((item) => item.id === productId);
@@ -141,26 +129,25 @@ function addToCart(productId) {
       id: product.id,
       name: product.name,
       price: product.price,
-      image: cleanImage, // Lưu đường dẫn sạch để trang nào cũng hiển thị được
+      image: cleanImage,
       quantity: qty,
     });
   }
   localStorage.setItem("cart", JSON.stringify(cart));
 
-  // 3. Thay thế alert bằng TOAST đẹp mắt
   Toastify({
     text: `🛒 Đã thêm ${product.name} vào giỏ hàng!`,
-    duration: 3000, // Hiển thị trong 3 giây
+    duration: 3000,
     close: true,
-    gravity: "top", // Hiển thị ở phía trên
-    position: "right", // Hiển thị ở bên phải
-    stopOnFocus: true, // Không tự mất khi đang di chuột vào
+    gravity: "top",
+    position: "right",
+    stopOnFocus: true,
     style: {
-      background: "linear-gradient(to right, #d4af37, #b8860b)", // Màu vàng kim sang trọng
+      background: "linear-gradient(to right, #d4af37, #b8860b)",
       color: "#fff",
       borderRadius: "8px",
       fontWeight: "bold",
     },
-    onClick: function () {}, // Callback sau khi click vào toast
+    onClick: function () {},
   }).showToast();
 }

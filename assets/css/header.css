@@ -12,32 +12,36 @@
   width: auto;
 }
 .mn_bar {
+  border-bottom: 1px solid #000000;
+  margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-family: "Times New Roman", Times, serif;
   height: 50px;
   padding: 20px;
-  gap: 10px;
-  border-bottom: 10px;
+  border-bottom: 1px solid #eee;
 }
 
 .mn_bar a {
   margin-right: 20px;
   text-decoration: none;
   color: black;
-  font-family: "Times New Roman", Times, serif;
-  border-bottom: 10px;
-  font-size: large;
+  font-size: x-large;
+}
+.mn_bar2 {
+  color: #b76e79;
+  text-decoration: underline;
 }
 .mn_bar1 a:hover {
-  color: #b76e79; /* Đổi sang màu vàng kim loại khi di chuyển chuột vào */
-  text-decoration: underline; /* Gạch chân để gây chú ý */
+  color: #b76e79;
+  text-decoration: underline;
 }
-/* Container cho menu tài khoản */
+
 .account-menu {
   position: relative;
   display: inline-block;
+  font-size: x-large;
 }
 
 .account-btn {
@@ -45,7 +49,6 @@
   padding: 5px 10px;
 }
 
-/* Danh sách dropdown ẩn mặc định */
 .account-dropdown {
   display: none;
   position: absolute;
@@ -53,12 +56,10 @@
   background-color: #fff;
   min-width: 150px;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  z-index: 1001;
   border-radius: 4px;
-  overflow: hidden;
 }
 
-/* Kiểu dáng các đường link bên trong dropdown */
 .account-dropdown a {
   color: #333 !important;
   padding: 10px 15px;
@@ -66,6 +67,7 @@
   display: block;
   font-size: 14px;
   border-bottom: 1px solid #f1f1f1;
+  margin-right: 0; /* Reset margin từ mn_bar a */
 }
 
 .account-dropdown a:hover {
@@ -73,7 +75,6 @@
   color: #d4af37 !important;
 }
 
-/* Hiển thị dropdown khi hover */
 .account-menu:hover .account-dropdown {
   display: block;
 }
